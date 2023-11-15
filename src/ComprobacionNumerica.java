@@ -109,7 +109,7 @@ public class ComprobacionNumerica extends javax.swing.JFrame {
             if (operacion == 0){
             sum = sum +i;
             }
-            System.out.println(operacion);
+            
         }
         if(sum == numero){
             lblRespuesta.setText(numero+ " es un numero perfecto");
