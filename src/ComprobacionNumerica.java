@@ -1,3 +1,7 @@
+
+import java.awt.List;
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,10 +12,11 @@
  * @author carlo
  */
 public class ComprobacionNumerica extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form ComprobacionNumerica
      */
+    
     public ComprobacionNumerica() {
         initComponents();
     }
@@ -29,8 +34,13 @@ public class ComprobacionNumerica extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         lblIngresarNum = new javax.swing.JLabel();
         txtIngresarNum = new javax.swing.JTextField();
-        btnComprobar = new javax.swing.JButton();
         lblRespuesta = new javax.swing.JLabel();
+        txtPerfecto = new javax.swing.JTextField();
+        txtPrimo = new javax.swing.JTextField();
+        txtPrimoMenor = new javax.swing.JTextField();
+        txtSumPrimosMenores = new javax.swing.JTextField();
+        btnComprobar = new javax.swing.JButton();
+        txtRaizCuadrada = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,20 +62,29 @@ public class ComprobacionNumerica extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lblIngresarNum)
-                        .addGap(26, 26, 26)
-                        .addComponent(txtIngresarNum, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addComponent(lblTitulo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(btnComprobar))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblIngresarNum)
+                                .addGap(26, 26, 26)
+                                .addComponent(txtIngresarNum, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtRaizCuadrada, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                                    .addComponent(txtSumPrimosMenores)
+                                    .addComponent(txtPrimoMenor)
+                                    .addComponent(txtPrimo)
+                                    .addComponent(txtPerfecto))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblRespuesta))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(lblRespuesta)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGap(107, 107, 107)
+                        .addComponent(btnComprobar)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,11 +95,20 @@ public class ComprobacionNumerica extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIngresarNum)
                     .addComponent(txtIngresarNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRespuesta)
+                    .addComponent(txtPerfecto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPrimo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPrimoMenor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSumPrimosMenores, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtRaizCuadrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lblRespuesta)
-                .addGap(28, 28, 28)
-                .addComponent(btnComprobar)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(btnComprobar))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,9 +119,7 @@ public class ComprobacionNumerica extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -101,21 +127,64 @@ public class ComprobacionNumerica extends javax.swing.JFrame {
 
     private void btnComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobarActionPerformed
         // TODO add your handling code here:
+        
         int numero = Integer.parseInt(txtIngresarNum.getText());
         int operacion = 0;
         int sum = 0;
+        int contador = 1;
+        
+        int[] primos = {
+            2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+            73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151,
+            157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233,
+            239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317,
+            331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419,
+            421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499
+        };
         for (int i = 1; i < numero; i++) {
             operacion = numero%i;
             if (operacion == 0){
             sum = sum +i;
+            contador++;
+                System.out.println(contador);
             }
             
         }
         if(sum == numero){
-            lblRespuesta.setText(numero+ " es un numero perfecto");
+            txtPerfecto.setText(numero+ " es un numero perfecto");
         }else{ 
-            lblRespuesta.setText(numero+ " no es un numero perfecto");
+            txtPerfecto.setText(numero+ " no es un numero perfecto");
         }
+      
+        //Aqui va el codigo de los numeros primos
+      
+        if(contador == 2){
+            txtPrimo.setText(numero+ " es un numero primo");
+            ArrayList<Integer> primosMenores = new ArrayList<>();
+            sum = 0;
+            for (int primo : primos) {
+                if (primo < numero) {
+                    primosMenores.add(primo);
+                    sum = sum+primo;
+                }
+            }
+            StringBuilder resultadoTexto = new StringBuilder();
+            int longitud = primosMenores.size();
+           
+            for (int i = 0; i < longitud; i++) {
+                resultadoTexto.append(primosMenores.get(i)).append(" , ");
+                
+            }
+            double raizCu = Math.sqrt(sum);
+            String sumatexto = sum + "";
+            String raiztexto = raizCu + "";
+            txtPrimoMenor.setText(resultadoTexto.toString());
+            txtSumPrimosMenores.setText(sumatexto);
+            txtRaizCuadrada.setText(raiztexto);
+            }else{ 
+                txtPrimo.setText(numero+ " no es un numero primo");
+            }
+        
     }//GEN-LAST:event_btnComprobarActionPerformed
 
     /**
@@ -160,5 +229,10 @@ public class ComprobacionNumerica extends javax.swing.JFrame {
     private javax.swing.JLabel lblRespuesta;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtIngresarNum;
+    private javax.swing.JTextField txtPerfecto;
+    private javax.swing.JTextField txtPrimo;
+    private javax.swing.JTextField txtPrimoMenor;
+    private javax.swing.JTextField txtRaizCuadrada;
+    private javax.swing.JTextField txtSumPrimosMenores;
     // End of variables declaration//GEN-END:variables
 }
